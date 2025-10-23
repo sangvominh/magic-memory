@@ -3,22 +3,93 @@
   margin: 40px auto;
 }
 button {
-  background: none;
-  border: 2px solid #fff;
-  padding: 6px 12px;
-  border-radius: 4px;
+  background-color: #667eea;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
   color: #fff;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 15px;
+  transition: background-color 0.2s ease;
 }
 button:hover {
-  background: #c23866;
-  color: #fff;
+  background-color: #5568d3;
+}
+button:active {
+  background-color: #4451b8;
 }
 .cards-grid {
   margin-top: 40px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
+}
+
+/* Dynamic grid sizes for different difficulties */
+.cards-grid.easy {
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cards-grid.medium {
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cards-grid.hard {
+  grid-template-columns: repeat(6, 1fr);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  grid-gap: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .cards-grid.hard {
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards-grid.easy {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cards-grid.medium {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .cards-grid.hard {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-grid {
+    grid-gap: 10px;
+  }
+
+  .cards-grid.hard {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Animations */
+@keyframes fadeInZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

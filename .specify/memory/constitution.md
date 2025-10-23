@@ -45,12 +45,14 @@ Prefer native solutions over external libraries. Each dependency must be explici
 ## Technology Stack
 
 **Framework**: React 19.2.0 with Create React App  
-**Styling**: CSS3 with CSS Modules or vanilla CSS (NO CSS frameworks beyond basic reset)  
-**Dependencies**: Only essential React ecosystem packages as defined in package.json  
+**Styling**: Tailwind CSS (justified for responsive design system and mobile-first approach)  
+**UI Components**: ShadCN UI (justified for accessible, consistent component library)  
+**Utilities**: date-fns (justified for robust time formatting in timer functionality)  
+**Dependencies**: Minimal essential packages with explicit justification required  
 **Build**: React Scripts 5.0.1  
 **Deployment**: GitHub Pages via gh-pages
 
-Note: User mentioned Next.js but current implementation uses Create React App. Any migration to Next.js must be explicitly planned and approved.
+**Framework Policy**: This project uses Create React App as the definitive framework. Any framework migration (including Next.js) requires explicit constitutional amendment and cannot be considered during feature implementation.
 
 ## Development Constraints
 
