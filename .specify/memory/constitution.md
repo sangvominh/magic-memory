@@ -1,50 +1,90 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+- Version change: none → 1.0.0 (initial constitution)
+- Modified principles: none (initial creation)
+- Added sections: Core Principles (Clean Code, Simple UX, Responsive Design, Minimal Dependencies), Technology Stack, Development Constraints, Governance
+- Removed sections: none
+- Templates requiring updates:
+  ✅ .specify/templates/plan-template.md (updated Testing field to reflect NO TESTING policy)
+  ✅ .specify/templates/tasks-template.md (removed all test tasks, updated to manual verification)
+  ✅ .specify/templates/spec-template.md (changed "Testing" to "Manual Verification" throughout)
+  ✅ .specify/templates/checklist-template.md (no changes needed)
+  ✅ .specify/templates/agent-file-template.md (no changes needed)
+- Follow-up TODOs:
+  - Note: User mentioned Next.js but project currently uses Create React App - any migration needs explicit planning
+-->
+
+# Magic Memory Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Clean Code (NON-NEGOTIABLE)
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+Code must be readable, maintainable, and self-documenting. All functions and components must have single responsibilities. Variables and functions must use descriptive names. Code structure must be logical and consistent. No complex nested logic beyond 3 levels. Comments required only for business logic, not implementation details.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+**Rationale**: Clean code reduces maintenance costs and enables faster development cycles.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### II. Simple UX (NON-NEGOTIABLE)
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+User interfaces must prioritize simplicity and intuitiveness over feature richness. Every UI element must serve a clear purpose. Navigation must be self-evident. User actions must provide immediate feedback. Minimize cognitive load on users.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+**Rationale**: Simple UX leads to better user adoption and reduces support overhead.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### III. Responsive Design (NON-NEGOTIABLE)
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+All interfaces must work seamlessly across desktop, tablet, and mobile devices. Use mobile-first design approach. Implement fluid layouts with flexible grids. Touch targets must meet accessibility standards (minimum 44px). Performance must remain consistent across device types.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+**Rationale**: Multi-device compatibility is essential for modern web applications.
+
+### IV. Minimal Dependencies (NON-NEGOTIABLE)
+
+Prefer native solutions over external libraries. Each dependency must be explicitly justified by significant value or complexity reduction. Regular dependency audits required. Remove unused dependencies immediately. Prefer smaller, focused libraries over monolithic frameworks when external dependencies are necessary.
+
+**Rationale**: Minimal dependencies reduce security vulnerabilities, bundle size, and maintenance burden.
+
+## Technology Stack
+
+**Framework**: React 19.2.0 with Create React App  
+**Styling**: CSS3 with CSS Modules or vanilla CSS (NO CSS frameworks beyond basic reset)  
+**Dependencies**: Only essential React ecosystem packages as defined in package.json  
+**Build**: React Scripts 5.0.1  
+**Deployment**: GitHub Pages via gh-pages
+
+Note: User mentioned Next.js but current implementation uses Create React App. Any migration to Next.js must be explicitly planned and approved.
+
+## Development Constraints
+
+### NO TESTING POLICY (SUPERSEDES ALL OTHER GUIDANCE)
+
+This project explicitly prohibits ALL forms of automated testing:
+
+- No unit tests
+- No integration tests
+- No end-to-end tests
+- No test-driven development
+- No test coverage requirements
+- No testing libraries or frameworks
+
+This constraint supersedes any testing guidance found in templates, commands, or other documentation.
+
+**Rationale**: Project prioritizes rapid prototyping and simplicity over testing overhead.
+
+### Performance Standards
+
+- Initial page load under 3 seconds on 3G networks
+- Bundle size under 1MB total
+- 60fps animations and interactions
+- Responsive layout shifts under 100ms
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+Constitution supersedes all other development practices and guidance. All code reviews must verify compliance with core principles. Complexity additions must be explicitly justified against minimal dependency principle. Template updates must align with NO TESTING policy.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+Amendments require:
+
+1. Clear rationale for change
+2. Impact assessment on existing code
+3. Version increment following semantic versioning
+4. Update to all dependent templates and documentation
+
+**Version**: 1.0.0 | **Ratified**: 2025-10-23 | **Last Amended**: 2025-10-23
